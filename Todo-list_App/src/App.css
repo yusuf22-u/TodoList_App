@@ -1,0 +1,242 @@
+#root {
+  position: relative;
+  min-height: 100vh; /* Set minimum height to fill the viewport */
+  background-image: url("../src/assets/image/im1.jpg"); /* Replace with your background image URL */
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.over-lay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Adjust the last value for the overlay opacity */
+  z-index: -1; /* Ensure overlay is below other elements */
+}
+
+/* Ensure TodoLists component is on top of the overlay */
+.todo-lists {
+  position: relative;
+  z-index: 2; /* Ensure TodoLists is above the overlay */
+  background: white; /* Add a background color for better visibility */
+  padding: 20px; /* Add some padding for better spacing */
+  border: 0.7px #c0c0c0 dashed;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: red; */
+  width: 60%;
+  margin: auto;
+  margin-top: 7px;
+  align-items: center;
+}
+.btn-del {
+  color: red;
+}
+.btn-up {
+  /* background-color: blue; */
+  color: blue;
+}
+li button {
+  padding: 0.6rem;
+  margin: 10px;
+  border: none;
+  outline: none;
+  width: 60px;
+  background-color: transparent;
+  cursor: pointer;
+}
+ul li {
+  width: 90%;
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 13px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: rgba(0, 0, 0, 0.24) 0.1px dashed;
+}
+span {
+  margin-left: 50%;
+  display: flex;
+}
+label {
+  margin-left: 10px;
+  color: #36454f;
+  width: 30%;
+}
+form {
+  padding: 10px;
+  width: 86%;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+input {
+  width: 480px;
+  padding: 1rem 7rem;
+  border: rgba(0, 0, 0, 0.24) 0.1px solid;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 6px;
+  padding-left: 5px;
+  margin-left: -15px;
+}
+form button {
+  padding: 0.9rem 2rem;
+  background: blue;
+  color: aliceblue;
+  border: none;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 17px;
+}
+[type="checkbox"] {
+  opacity: 0;
+}
+[type="checkbox"] + label {
+  position: absolute;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  color: #c0c0c0;
+  line-height: 25px;
+}
+[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  outline: 2px solid green;
+  background: white;
+  margin-top: 3px;
+}
+[type="checkbox"]:checked + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  outline: 2px dashed orangered;
+  background: white;
+}
+[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: url("../src/assets/image/ch4-removebg-preview.png");
+  background-size: contain;
+  transform: scale(1);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+[type="checkbox"]:not(:checked) + label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  outline: 2px solid orangered;
+  background: white;
+  transform: scale(0);
+  opacity: 0;
+}
+/* status css */
+.status {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+  width: 95%;
+}
+.complete {
+  width: 50%;
+  height: 200px;
+  background-color: #fff;
+  color: blue;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 17px;
+  text-align: center;
+}
+.complete h1 {
+  margin-top: 50px;
+}
+.complete p {
+  color: #36454f;
+}
+.num {
+  color: darkred;
+  font-style: bold;
+  font-size: 2.5rem;
+}
+.left {
+  color: green;
+  font-style: bold;
+  font-size: 2.5rem;
+}
+
+.percentageBox {
+  box-sizing: border-box;
+  margin: 20px 0px;
+  width: 100%;
+  margin-left: 20px;
+  margin-left: 30px;
+  padding-right: 10px;
+}
+.percentageBox h1 {
+  font-size: 1.2rem;
+}
+.percentageBox p {
+  color: orangered;
+  float: right;
+  position: relative;
+  top: 8px;
+  padding-right: 5px;
+  font-weight: 900;
+}
+.skill {
+  background: #262626;
+  padding: 4px;
+  box-sizing: border-box;
+  border: 1px solid green;
+  border-radius: 2px;
+}
+.skill_level {
+  background-color: #2d68c4;
+  height: 10px;
+  border: 1px solid white;
+  border-radius: 17px;
+}
+.calendar-date {
+  /* border: rgba(0, 0, 0, 0.24) 0.1px dashed; */
+  width: 35%;
+  border-radius: 17px;
+  position: relative;
+  left: 250px;
+  padding: 10px;
+  top: -150px;
+}
+input::placeholder {
+  content: "";
+  text-indent: 20px;
+  /* margin-left: -20px; */
+  color: green;
+  padding: 2px;
+}
